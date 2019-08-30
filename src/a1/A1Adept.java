@@ -30,7 +30,8 @@ public class A1Adept {
 
 		/* make a method that reads these arrays it finds the string 
 		that's equal to their item, and then uses the location 
-		
+		/hello!!
+		 * 
 		0. Seperate the loops by people
 		1. make a method that sees when is the srting equal to an item in the array
 		2. Store the value for it's location
