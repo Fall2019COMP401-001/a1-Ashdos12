@@ -20,7 +20,7 @@ public class A1Adept {
 			this.total = c;
 		}
 		void printline() {
-			System.out.println(this.firstname + " "+ this.lastname + (this.total));
+			System.out.println(this.firstname + " "+ this.lastname + " (" + this.total + ")");
 		}
 		
 	}
@@ -58,7 +58,7 @@ public class A1Adept {
 			String lName = scan.next();
 		// making an list of customers with each index being initalized in the loop 
 			buyers.add( new Customer( fName, lName, ""));
-			System.out.println(buyers);
+			System.out.println(buyers.get(y).firstname +" "+ buyers.get(y).lastname);
 			buying = scan.nextInt();
 			System.out.println("The amount you are buying is: " + buying);
 			
@@ -71,8 +71,10 @@ public class A1Adept {
 					basket[z] = scan.next();
 				}
 				
-			System.out.println(Arrays.toString(price));
-			System.out.println(Arrays.toString(basket));
+			/*
+			 * System.out.println(Arrays.toString(price));
+			 * System.out.println(Arrays.toString(basket));
+			 */
 			
 			
 			// Woot all the arrays are here!! Now to compare arrays to find the index's!!
@@ -84,7 +86,7 @@ public class A1Adept {
 				}
 				}
 			}
-			System.out.println(Arrays.toString(indexs));
+			/* System.out.println(Arrays.toString(indexs)); */
 			
 			
 			// Woot now to get the total cost
@@ -92,16 +94,36 @@ public class A1Adept {
 			cost = 0.0;
 			for (int u = 0; u < basket.length; u++) {
 				cost = (price[u]*prices[indexs[u]]);		
-			}
+				}
 			String roundTotal = "";
-			System.out.println(cost);
+			System.out.println(" Your total is : " + cost);
 			roundTotal = String.format("%.2f", cost);
 			buyers.get(y).total = roundTotal;
+			
+			
+			double[] baseline = new double[loops];
+			System.out.println(" The amount of customers is: " + loops);
+			String ok = buyers.get(y).total;
+			System.out.println("The total is a string :" + ok );
+		for (int c = 0; c < buyers.size(); c++) {
+			String purchase = buyers.get(c).total;
+			System.out.println(purchase);
+			baseline[c] = Double.parseDouble(purchase);
 		}
-
+	// now to compare the totals and to print out the final line!!
+			System.out.println(baseline);
+	
+			
+		
+}
+		
+		}
+			
+		
+	
 		// make a class that stores a first name, last name and the cost that's printed! Then figure out the loop and comparison!!	
 		
-	}
+	
 
 /*PLAN FOR GOING ON!!
 		 * make a method that compares the string arrays, and when it finds a match it's stored into an array of indexes
@@ -116,6 +138,10 @@ public class A1Adept {
 
 // method goes here that sorts through the people and orders	
 //come
+	
+	
+	
+	
 	public static String[] namesArray(int a) {
 		Scanner scan = new Scanner(System.in);
 		String[] names = new String[a];
