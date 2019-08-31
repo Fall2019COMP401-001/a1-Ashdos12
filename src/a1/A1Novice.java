@@ -18,6 +18,7 @@ public class A1Novice {
 			String custFName = scan.next();
 			String custLName = scan.next();
 	
+
 			double total = 0; 
 			int loops = scan.nextInt();
 			String roundTotal = "";
@@ -31,6 +32,22 @@ public class A1Novice {
 				
 				total = total + ( amt * price);
 				// rounds off to the correct amount
+
+			// make 3d array to store numerical value then use the array to add up the totals and store it in a value 
+//			double total = 0; 
+//			int loops = scan.nextInt();
+//			String roundTotal = "";
+//			// loop through for each item, updating the total as it goes. 
+//			// dosent work as double is a different data type than int
+//			for (int n = 0; n < loops; n++) {
+//				int amt = scan.nextInt();
+//	
+//				String purchase = scan.next();
+//				
+//				double price = scan.nextDouble();
+//				
+//				total = total + ( amt * price);
+//>>>>>>> branch 'master' of https://github.com/Fall2019COMP401-001/a1-Ashdos12.git
 				 roundTotal = String.format("%.2f", total);
 			}
 			
