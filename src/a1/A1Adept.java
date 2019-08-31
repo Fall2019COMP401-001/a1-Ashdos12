@@ -115,7 +115,7 @@ public class A1Adept {
 // make a method to compare the prices from part 1!!		
 
 // method goes here that sorts through the people and orders	
-
+//comeo
 	public static String[] namesArray(int a) {
 		Scanner scan = new Scanner(System.in);
 		String[] names = new String[a];
