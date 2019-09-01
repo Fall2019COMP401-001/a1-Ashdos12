@@ -183,7 +183,7 @@ public static int[] findmatch( String[] s, String[] c) {
 		String[] line = new String[a.length];
 		for ( int e = 0; e < a.length; e ++) {
 			if (a[e] > 0) {
-				line[e] = " " + a[e];
+				line[e] = "" + a[e];
 			}
 			else {
 				line[e] = "No";
