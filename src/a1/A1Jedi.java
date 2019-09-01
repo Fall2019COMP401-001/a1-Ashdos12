@@ -14,7 +14,7 @@ public class A1Jedi {
 	
 		String total = "";
 		String[] basket ;
-		double[] quantity;
+		int[] quantity;
 		int buying = 0;
 		public Customer(String a, String b, int d) {
 			// constructor for class
@@ -22,7 +22,7 @@ public class A1Jedi {
 			this.total = b;
 			this.buying = d;
 			this.basket = new String[d];
-			this.quantity = new double[d];
+			this.quantity = new int[d];
 		}
 
 		String printline() {
@@ -74,8 +74,9 @@ public class A1Jedi {
 					price[z] = scan.nextInt();
 					basket[z] = scan.next();
 				}
+				// making arrays for each customer to save how many of each item they brought 
 				buyers.get(y).basket = basket;
-				
+				buyers.get(y).quantity = price;
 			
 			// Woot all the arrays are here!! Now to compare arrays to find the index's!!
 			int [] indexs = new int[buying];
@@ -99,9 +100,25 @@ public class A1Jedi {
 	
 			String ok = buyers.get(y).total;
 		
-	
+			System.out.println(buyers.get(y).wholename);
+			System.out.println(Arrays.toString(buyers.get(y).basket) );
+			System.out.println(Arrays.toString(buyers.get(y).quantity));
 		}
-		System.out.println(buyers.get(loops).wholename);
-		System.out.println(Arrays.toString(buyers.get(loops).basket) );
+		
 	}
+
+// c is the longer array!!
+public static int[] findmatch( String[] s, String[] c) {
+	int [] count = new int[s.length];
+	for ( int i =0; i < s.length; i ++) {
+		for ( int x = 0; x < c.length; x++) {
+			if(s[i].equals(c[x])) {
+				count[i] = x;
+			}
+		}
+		return count;
+	}
+	
+	
+	
 }
