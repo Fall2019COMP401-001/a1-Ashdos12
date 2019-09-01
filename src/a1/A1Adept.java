@@ -95,10 +95,11 @@ public class A1Adept {
 
 	
 			String ok = buyers.get(y).total;
-			System.out.println("The total is a string :" + ok );
+		
+	
+		}
 		for (int c = 0; c < buyers.size(); c++) {
 			String purchase = buyers.get(c).total;
-			System.out.println(purchase);
 			baseline[c] = Double.parseDouble(purchase);
 		}
 		String maximum = "";
@@ -130,7 +131,6 @@ public class A1Adept {
 		System.out.println("Smallest: " + minBuy.printline());
 		
 		System.out.println("Averege: " + average);
-		}
 	
 }
 		
