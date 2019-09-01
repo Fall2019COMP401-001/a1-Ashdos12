@@ -21,27 +21,21 @@ public class A1Adept {
 			this.total = c;
 			this.totalRaw = d;
 		}
-<<<<<<< HEAD
+
 		String printline() {
 			String printout = "";
 			printout = (this.firstname + " "+ this.lastname + " (" + this.total + ")");
 			return printout;
-=======
-		void printline() {
-			System.out.println(this.firstname + " "+ this.lastname + " (" + this.total + ")");
->>>>>>> refs/remotes/origin/master
-		}
 		
+	}
 	}
 	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
 
-		// Your code follows here.
-		// number of items in store
+
 		int stock = scan.nextInt();
-		// make a string array of items and then make a double array of prices.
-		// each item will correspond to the price in the same block
+	
 		String[] items;
 		double[] prices;
 		items = new String[stock];
@@ -50,7 +44,6 @@ public class A1Adept {
 		for (int x = 0; x < stock; x++) {
 			items[x] = scan.next();
 			prices[x] = scan.nextDouble();
-
 		}
 		int loops = scan.nextInt();
 		int buying;
@@ -59,19 +52,14 @@ public class A1Adept {
 		
 // main class constructor for the orders		
 		for (int y = 0; y < loops; y++) {
+			
 			// make a name into a class with a first name and a second name 
 			String fName = scan.next(); 
-	
 			String lName = scan.next();
-<<<<<<< HEAD
+
 		// making an list of customers with each index being initialized in the loop 
 			buyers.add( new Customer( fName, lName, "", 0));
 			
-=======
-		// making an list of customers with each index being initalized in the loop 
-			buyers.add( new Customer( fName, lName, ""));
-			System.out.println(buyers.get(y).firstname +" "+ buyers.get(y).lastname);
->>>>>>> refs/remotes/origin/master
 			buying = scan.nextInt();
 	
 			
@@ -83,17 +71,7 @@ public class A1Adept {
 					price[z] = scan.nextInt();
 					basket[z] = scan.next();
 				}
-<<<<<<< HEAD
-					
-=======
 				
-			/*
-			 * System.out.println(Arrays.toString(price));
-			 * System.out.println(Arrays.toString(basket));
-			 */
-			
-			
->>>>>>> refs/remotes/origin/master
 			// Woot all the arrays are here!! Now to compare arrays to find the index's!!
 			int [] indexs = new int[buying];
 			for (int t = 0; t < basket.length; t++) {
@@ -103,35 +81,19 @@ public class A1Adept {
 				}
 				}
 			}
-			/* System.out.println(Arrays.toString(indexs)); */
-			
-			
-			// Woot now to get the total cost
+		
 			Double cost; 
 			cost = 0.0;
 			for (int u = 0; u < basket.length; u++) {
-<<<<<<< HEAD
 				cost = cost + (price[u]*prices[indexs[u]]);		
-=======
-				cost = (price[u]*prices[indexs[u]]);		
->>>>>>> refs/remotes/origin/master
 				}
 			String roundTotal = "";
-<<<<<<< HEAD
-			
-=======
-			System.out.println(" Your total is : " + cost);
->>>>>>> refs/remotes/origin/master
 			roundTotal = String.format("%.2f", cost);
 			buyers.get(y).totalRaw = cost;
 	
 			buyers.get(y).total = roundTotal;
-			
-<<<<<<< HEAD
-=======
-			
-			double[] baseline = new double[loops];
-			System.out.println(" The amount of customers is: " + loops);
+
+	
 			String ok = buyers.get(y).total;
 			System.out.println("The total is a string :" + ok );
 		for (int c = 0; c < buyers.size(); c++) {
@@ -139,34 +101,13 @@ public class A1Adept {
 			System.out.println(purchase);
 			baseline[c] = Double.parseDouble(purchase);
 		}
-	// now to compare the totals and to print out the final line!!
-			System.out.println(baseline);
-	
-			
-		
-}
-		
-		}
-			
-		
-	
-		// make a class that stores a first name, last name and the cost that's printed! Then figure out the loop and comparison!!	
->>>>>>> refs/remotes/origin/master
-		
-<<<<<<< HEAD
-	// now to compare the totals and to print out the final line!!		
-}
-		// initializing variables to find the min max and avg
 		String maximum = "";
 		Customer maxBuy = new Customer( "", "", "", 0);
 		String minimum = "";
 		Customer minBuy = new Customer("", "", "", 0);
 		String average = "";
 		
-	for (int a= 0; a< loops; a++) {
-		baseline[a]= buyers.get(a).totalRaw;
-
-	}	
+	
 	// assigning variables for methods to find minimum and maximum 
 		double max = findMax(baseline);
 		maximum =String.format("%.2f", max);
@@ -190,6 +131,14 @@ public class A1Adept {
 		
 		System.out.println("Averege: " + average);
 		}
+	
+}
+		
+		
+			
+
+		
+// useful methods
 	public static double findMax( double[] input)	{
 		double maxVal = input[0];
 		for ( int s = 0; s < input.length; s++) {
@@ -209,36 +158,13 @@ public class A1Adept {
 		return minVal;
 	}
 	public static double findAvg(double[] input) {
-=======
-	
->>>>>>> refs/remotes/origin/master
-
-<<<<<<< HEAD
 		double avg = input[0];
 		for (int y = 1; y < input.length; y++) {
 			avg = avg + input[y];
 		}
 		return avg / input.length;
 	}
-=======
-/*PLAN FOR GOING ON!!
-		 * make a method that compares the string arrays, and when it finds a match it's stored into an array of indexes
-		 * Then take those indexes and use them to find the prices of each item
-		 * Then multiply the prices buy the quantity brought
-		 * Then make the array of the total and the names. Each name is an index in another array
-		 * Then go through all three names make a method to see which value is greater, the indexes match with the name, 
-		 * Then print out the statemens
-		 */
 
-// make a method to compare the prices from part 1!!		
-
-// method goes here that sorts through the people and orders	
-//come
-	
-	
-	
-	
->>>>>>> refs/remotes/origin/master
 	public static String[] namesArray(int a) {
 		Scanner scan = new Scanner(System.in);
 		String[] names = new String[a];
@@ -246,6 +172,7 @@ public class A1Adept {
 			names[x] = scan.next();
 		}
 		return names;
+		}
 	}
-}
+
 
