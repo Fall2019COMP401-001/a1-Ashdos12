@@ -124,9 +124,32 @@ public class A1Jedi {
 		// indexes of each of the brought objects, and they occur in the quanity brought!!
 		System.out.println( " You buy this amount of items:" + Arrays.toString(findmatch(buyers.get(i).basket, items)));
 		matched.add(findmatch(buyers.get(i).basket, items));
-		System.out.println(Arrays.toString(counterBuy(matched.get(i), grocer));
+		
 		}
-		)
+		// trying to get count of amount brought
+		int[] counter = new int[grocer.stock.length];
+		System.out.println(Arrays.toString(counter));
+
+		for (int o = 0 ; o < loops; o ++) {
+			for ( int y = 0; y < matched.get(o).length ; y ++) {
+				int index = matched.get(o)[y];
+				
+			System.out.println("The index being modified is: " +index);
+				if ( index < grocer.stock.length) {
+					counter[index] = (1 + counter[index]);
+				}
+				System.out.println(Arrays.toString(counter));
+			}	
+		}
+		String[] countPrint = new String[counter.length];
+		countPrint = printlin(counter);
+		for ( int u = 0; u < counter.length; u ++) {
+			System.out.println( countPrint[u] + " customers brought " + grocer.stock[u]);
+		}
+		
+		// Now to take the counter variables and to print a statement saying how many brought each item!!
+		
+		
 	}
 
 // c is the longer array!!
@@ -141,19 +164,28 @@ public static int[] findmatch( String[] s, String[] c) {
 	}
 	return count;
 }
-	
+
+	public static String[] printlin(int[] a) {
+		String[] line = new String[a.length];
+		for ( int e = 0; e < a.length; e ++) {
+			if (a[e] != 0) {
+				line[a[e]] = " " + a[e];
+			}
+			else {
+				line[a[e]] = "No";
+			}
+		}
+		return line;
+	}
+}
 // count how many of each item you buy 
-public static int[] counterBuy( int[] a, Store s) {
-	int[] counter = new int[s.stock.length];
-	for ( int y = 0; y < counter.length; y ++) {
-		int x = 0;
-	if ( a[y] == x) {
-		counter[x] = counter[x]++;
-		x++;
-	}
-	}
-	return counter;
-}
-}
+/*
+ * public static int[] counterBuy( int[] a, Store s) {
+ * 
+ * return counter; }
+ * 
+ * }
+ */
+
 // make method to 
 	
