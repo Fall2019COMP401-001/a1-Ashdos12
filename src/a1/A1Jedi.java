@@ -154,9 +154,9 @@ public class A1Jedi {
 		/// Final PRINT STATMENTS
 		for ( int u = 0; u < counter.length; u ++) {
 			if (totalBuy[u] > 0) {
-				System.out.println( countPrint[u] + " customers brought "+ totalBuy[u] + " " + grocer.stock[u]);
+				System.out.println( countPrint[u] + " customers bought "+ totalBuy[u] + " " + grocer.stock[u]);
 			} else {
-				System.out.println( countPrint[u] + " customers brought "+ grocer.stock[u]);
+				System.out.println( countPrint[u] + " customers bought "+ grocer.stock[u]);
 			}
 		
 		}
