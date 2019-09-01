@@ -139,7 +139,7 @@ public class A1Adept {
 		
 		System.out.println("Smallest: " + minBuy.printline());
 		
-		System.out.println("Averege: " + average);
+		System.out.println("Average: " + average);
 }
 		
 		
