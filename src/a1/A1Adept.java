@@ -112,26 +112,35 @@ public class A1Adept {
 	// assigning variables for methods to find minimum and maximum 
 		double max = findMax(baseline);
 		maximum =String.format("%.2f", max);
+		
 		double min = findMin(baseline);
 		minimum = String.format("%.2f", min);
 		double avg = findAvg(baseline);
 		average = String.format("%.2f", avg);
 		// compares with the lists to choose which Customers to print
-		for ( int t = 0; t < buyers.size(); t++) {
-			if (buyers.get(t).totalRaw == max) {
-				maxBuy = buyers.get(t);
-			}
-			if (buyers.get(t).totalRaw == min) {
-				minBuy = buyers.get(t);
-			}
+			for ( int t = 0; t < buyers.size(); t++) {
+				if (buyers.get(t).totalRaw >=max) {
+					maxBuy = buyers.get(t);
+					
+				} 
+				if (buyers.get(t).totalRaw <= min){
+					minBuy = buyers.get(t);
+					
+				}
+			} if (max == min && buyers.size() > 1){
+				for ( int i = 1; i < buyers.size(); i ++) {
+				maxBuy = buyers.get(0);
+				minBuy = buyers.get(i);
+				}
 		}
+	
 		// output
+	
 		System.out.println("Biggest: " + maxBuy.printline());
 		
 		System.out.println("Smallest: " + minBuy.printline());
 		
 		System.out.println("Averege: " + average);
-	
 }
 		
 		
