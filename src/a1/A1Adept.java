@@ -10,21 +10,20 @@ import java.util.List;
 public class A1Adept {
 	
 	public static class Customer{
-		String firstname = "";
-		String lastname = "";
+		String wholename = "";
+	
 		String total = "";
 		double totalRaw= 0;
-		public Customer(String a, String b, String c, double d) {
+		public Customer(String a, String b, double d) {
 			// constructor for class
-			this.firstname = a;
-			this.lastname = b;
-			this.total = c;
+			this.wholename = a;
+			this.total = b;
 			this.totalRaw = d;
 		}
 
 		String printline() {
 			String printout = "";
-			printout = (this.firstname + " "+ this.lastname + " (" + this.total + ") ");
+			printout = (this.wholename+ " (" + this.total + ")");
 			return printout;
 		
 	}
@@ -56,9 +55,9 @@ public class A1Adept {
 			// make a name into a class with a first name and a second name 
 			String fName = scan.next(); 
 			String lName = scan.next();
-
+			String wholenam = (fName + " " + lName);
 		// making an list of customers with each index being initialized in the loop 
-			buyers.add( new Customer( fName, lName, "", 0));
+			buyers.add( new Customer( wholenam, "", 0));
 			
 			buying = scan.nextInt();
 	
@@ -103,9 +102,9 @@ public class A1Adept {
 			baseline[c] = Double.parseDouble(purchase);
 		}
 		String maximum = "";
-		Customer maxBuy = new Customer( "", "", "", 0);
+		Customer maxBuy = new Customer( "", "", 0);
 		String minimum = "";
-		Customer minBuy = new Customer("", "", "", 0);
+		Customer minBuy = new Customer("", "", 0);
 		String average = "";
 		
 	
