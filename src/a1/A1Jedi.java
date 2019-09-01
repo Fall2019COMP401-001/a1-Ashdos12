@@ -10,6 +10,7 @@ import a1.A1Adept.Customer;
 public class A1Jedi {
 	
 	public static class Customer{
+
 		String wholename = "";
 	
 		String total = "";
@@ -32,6 +33,16 @@ public class A1Jedi {
 		
 	}
 	}
+	public static class Store{
+		String[] stock ;
+		int[] numberBrought;
+		int[] counter;
+		public Store ( String[] a) {
+			this.stock = a;
+			numberBrought = new int[a.length];
+			counter = new int[a.length];
+		}
+	}
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
@@ -50,7 +61,9 @@ public class A1Jedi {
 		}
 		int loops = scan.nextInt();
 		int buying;
+		Store grocer = new Store(items);
 		List <Customer> buyers = new ArrayList<Customer>();
+		List <int[]> matched = new ArrayList<int[]>();
 		double[] baseline = new double[loops];
 		
 // main class constructor for the orders		
@@ -100,11 +113,20 @@ public class A1Jedi {
 	
 			String ok = buyers.get(y).total;
 		
-			System.out.println(buyers.get(y).wholename);
-			System.out.println(Arrays.toString(buyers.get(y).basket) );
-			System.out.println(Arrays.toString(buyers.get(y).quantity));
-		}
 		
+			System.out.println(Arrays.toString(buyers.get(y).basket) );
+			
+		}
+		for ( int i =0; i < loops; i ++) {
+		System.out.println(buyers.get(i).wholename);
+		System.out.println(Arrays.toString(items));
+		System.out.println(Arrays.toString(buyers.get(i).basket));
+		// indexes of each of the brought objects, and they occur in the quanity brought!!
+		System.out.println( " You buy this amount of items:" + Arrays.toString(findmatch(buyers.get(i).basket, items)));
+		matched.add(findmatch(buyers.get(i).basket, items));
+		System.out.println(Arrays.toString(counterBuy(matched.get(i), grocer));
+		}
+		)
 	}
 
 // c is the longer array!!
@@ -116,9 +138,22 @@ public static int[] findmatch( String[] s, String[] c) {
 				count[i] = x;
 			}
 		}
-		return count;
 	}
-	
-	
-	
+	return count;
 }
+	
+// count how many of each item you buy 
+public static int[] counterBuy( int[] a, Store s) {
+	int[] counter = new int[s.stock.length];
+	for ( int y = 0; y < counter.length; y ++) {
+		int x = 0;
+	if ( a[y] == x) {
+		counter[x] = counter[x]++;
+		x++;
+	}
+	}
+	return counter;
+}
+}
+// make method to 
+	
