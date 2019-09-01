@@ -24,7 +24,7 @@ public class A1Adept {
 
 		String printline() {
 			String printout = "";
-			printout = (this.firstname + " "+ this.lastname + " (" + this.total + ")");
+			printout = (this.firstname + " "+ this.lastname + " (" + this.total + ") ");
 			return printout;
 		
 	}
@@ -129,8 +129,8 @@ public class A1Adept {
 				}
 			} if (max == min && buyers.size() > 1){
 				for ( int i = 1; i < buyers.size(); i ++) {
-				maxBuy = buyers.get(0);
-				minBuy = buyers.get(i);
+				maxBuy = buyers.get(i);
+				minBuy = buyers.get(0);
 				}
 		}
 	
