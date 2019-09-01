@@ -37,9 +37,11 @@ public class A1Jedi {
 	public static class Cart{
 		String[] food;
 		int[] howMuch;
+		String name;
 		public Cart ( String[] s ,int[] item) {
 			this.food = s;
 			this.howMuch = item;
+			this.name = name;
 		}
 	}
 	public static class Store{
@@ -118,53 +120,38 @@ public class A1Jedi {
 				}
 			String roundTotal = "";
 			roundTotal = String.format("%.2f", cost);
-			buyers.get(y).total = roundTotal;
-
-	
-
-		
-		
-			System.out.println(Arrays.toString(buyers.get(y).basket) );
-			
+			buyers.get(y).total = roundTotal;			
 			String[] bskt = buyers.get(y).basket;
 			int[] qua = buyers.get(y).quantity;
 			carts.add( new Cart (bskt, qua));
 		}
 		for ( int i =0; i < loops; i ++) {
-		System.out.println(buyers.get(i).wholename);
-		System.out.println(Arrays.toString(items));
-		System.out.println(Arrays.toString(buyers.get(i).basket));
+
 		// indexes of each of the brought objects, and they occur in the quanity brought!!
 	
-		System.out.println("Your total brought is :" + Arrays.toString(buyers.get(i).quantity));
-		System.out.println( " You buy this amount of items:" + Arrays.toString(findmatch(buyers.get(i).basket, items)));
+	
 		matched.add(findmatch(buyers.get(i).basket, items));
 		
 		}
 		// trying to get count of amount brought
 		int[] counter = new int[grocer.stock.length];
-		System.out.println(Arrays.toString(counter));
+	
 		int [] totalBuy = new int[grocer.stock.length];
 		int[] total = new int[grocer.stock.length];
 		for (int o = 0 ; o < loops; o ++) {
 			for ( int y = 0; y < matched.get(o).length ; y ++) {
 				int index = matched.get(o)[y];
 				
-			System.out.println("The index being modified is: " +index);
 				if ( index < grocer.stock.length) {
 					counter[index] = (1 + counter[index]);
 				}
-				
-				totalBuy= totalamt(carts.get(o), grocer.stock, total);
-				
-				System.out.println(Arrays.toString(counter));
-			}	
+			}
+			totalBuy= totalamt(carts.get(o), grocer.stock, total);
 		}
 		
 		String[] countPrint = new String[grocer.stock.length];
 		countPrint = printlin(counter);
-		System.out.println(Arrays.toString(countPrint));
-		/// the last 3 are null!
+		/// Final PRINT STATMENTS
 		for ( int u = 0; u < counter.length; u ++) {
 			if (totalBuy[u] > 0) {
 				System.out.println( countPrint[u] + " customers brought "+ totalBuy[u] + " " + grocer.stock[u]);
@@ -195,8 +182,6 @@ public static int[] findmatch( String[] s, String[] c) {
 	public static String[] printlin(int[] a) {
 		String[] line = new String[a.length];
 		for ( int e = 0; e < a.length; e ++) {
-			int index = a[e];
-		
 			if (a[e] > 0) {
 				line[e] = " " + a[e];
 			}
@@ -207,11 +192,12 @@ public static int[] findmatch( String[] s, String[] c) {
 		return line;
 	}
 
+	
 // add it the array the same length as the grocer's list! 
 	// check is the array of the items the person brought!!
 public static int[] totalamt ( Cart cart, String[] root, int[] total) {
 	
-	for ( int t = 0; t < cart.howMuch.length; t ++) {
+	for ( int t = 0; t < cart.food.length; t ++) {
 		for (int u = 0; u < root.length; u ++) {
 			if (cart.food[t].equals(root[u]))	{
 				total[u]=  total[u] + cart.howMuch[t];
@@ -221,13 +207,4 @@ public static int[] totalamt ( Cart cart, String[] root, int[] total) {
 	return total;
 }
 }
-// count how many of each item you buy 
-/*
- * public static int[] counterBuy( int[] a, Store s) {
- * 
- * return counter; }
- * 
- * }
- */
 
-// make method to 
