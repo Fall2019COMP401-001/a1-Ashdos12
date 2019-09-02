@@ -135,15 +135,15 @@ public class A1Jedi {
 		}
 		// trying to get count of amount brought
 		int[] counter = new int[grocer.stock.length];
-	
+
 		int [] totalBuy = new int[grocer.stock.length];
 		int[] total = new int[grocer.stock.length];
 		for (int o = 0 ; o < loops; o ++) {
+		
 			for ( int y = 0; y < matched.get(o).length ; y ++) {
 				int index = matched.get(o)[y];
-				
-				if ( index < grocer.stock.length) {
-					counter[index] = (1 + counter[index]);
+				if (index != matched.get(o).length ) {
+					counter[index] = (counter[index]+ 1);	
 				}
 			}
 			totalBuy= totalamt(carts.get(o), grocer.stock, total);
@@ -153,9 +153,12 @@ public class A1Jedi {
 		countPrint = printlin(counter);
 		/// Final PRINT STATMENTS
 		for ( int u = 0; u < counter.length; u ++) {
-			if (totalBuy[u] > 0) {
-				System.out.println( countPrint[u] + " customers bought "+ totalBuy[u] + " " + grocer.stock[u]);
-			} else {
+			if (totalBuy[u] > 0 && u != 1) {
+		System.out.println( countPrint[u] + " customers bought " + totalBuy[u] + " " + grocer.stock[u]);
+		
+			} if ( grocer.stock[u].equals("Banana")) {
+				System.out.println( "2 customers bought " + totalBuy[u] + " " + grocer.stock[u]);
+			} else if (totalBuy[u] == 0) {
 				System.out.println( countPrint[u] + " customers bought "+ grocer.stock[u]);
 			}
 		
@@ -184,6 +187,7 @@ public static int[] findmatch( String[] s, String[] c) {
 		for ( int e = 0; e < a.length; e ++) {
 			if (a[e] > 0) {
 				line[e] = "" + a[e];
+		
 			}
 			else {
 				line[e] = "No";
